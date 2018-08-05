@@ -1,6 +1,7 @@
 package com.gnosisdevelopment.research.sonar;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +10,33 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+import com.ultramegasoft.radarchart.RadarHolder;
+import com.ultramegasoft.radarchart.RadarView;
 
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+    //https://github.com/ultramega/android-radar-chart/blob/master/testapp/src/main/java/com/ultramegasoft/radarchart/testapp/MainActivity.java
+    @NonNull
+    private ArrayList<RadarHolder> mData = new ArrayList<RadarHolder>() {
+        {
+            add(new RadarHolder("Body", 3));
+            add(new RadarHolder("Charcoal", 4));
+            add(new RadarHolder("Oak", 4));
+            add(new RadarHolder("Leather", 4));
+            add(new RadarHolder("Spice", 2));
+            add(new RadarHolder("Alcohol", 3));
+            add(new RadarHolder("Astringent", 3));
+            add(new RadarHolder("Linger", 4));
+            add(new RadarHolder("Sweet", 2));
+            add(new RadarHolder("Maple", 2));
+            add(new RadarHolder("Fruit", 3));
+            add(new RadarHolder("Vanilla", 2));
+            add(new RadarHolder("Smoke", 1));
+            add(new RadarHolder("Peat", 0));
+            add(new RadarHolder("Nut", 1));
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        RadarView mRadarView = (RadarView)findViewById(R.id.radar);
+        mRadarView.setData(mData);
+        mRadarView.setInteractive(true);
     }
 
     @Override
