@@ -1,22 +1,51 @@
 package com.gnosisdevelopment.research.sonar;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.annotation.Nullable;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
+import com.ultramegasoft.radarchart.RadarEditWidget;
 import com.ultramegasoft.radarchart.RadarHolder;
 import com.ultramegasoft.radarchart.RadarView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    //https://github.com/ultramega/android-radar-chart/blob/master/testapp/src/main/java/com/ultramegasoft/radarchart/testapp/MainActivity.java
+/**
+ * Shows an example radar chart with an edit button that enables interactive mode and shows the
+ * edit
+ * widget.
+ *
+ * @author Steve Guidetti
+ */
+public class MainActivity extends Activity {
+
+    /**
+     * The RadarView
+     */
+    private RadarView mRadarView;
+
+    /**
+     * The RadarEditWidget
+     */
+    private RadarEditWidget mEditWidget;
+
+    /**
+     * The animation to use when showing the RadarEditWidget
+     */
+    private Animation mEditInAnimation;
+
+    /**
+     * The animation to use when hiding the RadarEditWidget
+     */
+    private Animation mEditOutAnimation;
+
+    /**
+     * The data for the RadarView
+     */
     @NonNull
     private ArrayList<RadarHolder> mData = new ArrayList<RadarHolder>() {
         {
@@ -37,45 +66,74 @@ public class MainActivity extends AppCompatActivity {
             add(new RadarHolder("Nut", 1));
         }
     };
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        // Find the views in the layout.
+        mRadarView = findViewById(R.id.radar);
+        mEditWidget = findViewById(R.id.edit_widget);
+
+        // Set the data for the RadarView to display.
+        mRadarView.setData(mData);
+
+        // Set the target RadarView for the RadarEditWidget to control.
+        mEditWidget.setTarget(mRadarView);
+
+        // Set the callbacks for the RadarEditWidget buttons.
+        mEditWidget.setOnButtonClickListener(new RadarEditWidget.OnButtonClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onSave() {
+                mData = mRadarView.getData();
+                setEditMode(false);
+            }
+
+            @Override
+            public void onCancel() {
+                mRadarView.setData(mData);
+                setEditMode(false);
             }
         });
-        RadarView mRadarView = (RadarView)findViewById(R.id.radar);
-        mRadarView.setData(mData);
-        mRadarView.setInteractive(true);
+
+        // Set the listener for the edit button.
+        findViewById(R.id.button_edit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setEditMode(true);
+            }
+        });
+
+        // Load the animations.
+        mEditInAnimation = AnimationUtils.loadAnimation(this, R.anim.flavor_edit_in);
+        mEditOutAnimation = AnimationUtils.loadAnimation(this, R.anim.flavor_edit_out);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    /**
+     * Enable or disable interactive mode.
+     *
+     * @param editMode Whether to enable interactive mode
+     */
+    private void setEditMode(boolean editMode) {
+        if(editMode == mRadarView.isInteractive()) {
+            return;
         }
 
-        return super.onOptionsItemSelected(item);
+        if(editMode) {
+            // Enable interactive mode.
+            mRadarView.setInteractive(true);
+
+            // Show the RadarEditWidget.
+            mEditWidget.startAnimation(mEditInAnimation);
+            mEditWidget.setVisibility(View.VISIBLE);
+        } else {
+            // Disable interactive mode.
+            mRadarView.setInteractive(false);
+
+            // Hide the RadarEditWidget.
+            mEditWidget.startAnimation(mEditOutAnimation);
+            mEditWidget.setVisibility(View.GONE);
+        }
     }
 }

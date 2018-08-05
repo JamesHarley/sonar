@@ -1,4 +1,4 @@
 <resources>
+    <string name="button_edit">Edit</string>
     <string name="app_name">Sonar</string>
-    <string name="action_settings">Settings</string>
 </resources>
