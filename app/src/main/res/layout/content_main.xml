@@ -22,7 +22,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-android:orientation="horizontal"
+   android:orientation="horizontal"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:layout_width="match_parent"
@@ -31,6 +31,8 @@ android:orientation="horizontal"
 
 
     <LinearLayout
+        android:layout_margin="20dp"
+        android:background="@drawable/border"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
@@ -39,6 +41,7 @@ android:orientation="horizontal"
 
         <ImageView
             android:id="@+id/up"
+            android:layout_marginLeft="120dp"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerInParent="true"
@@ -62,25 +65,27 @@ android:orientation="horizontal"
                 android:layout_marginBottom="10dp"
                 android:rotation="270"
                 android:src="@drawable/triangle" />
-
+<!--
             <com.ultramegasoft.radarchart.RadarView
                 android:id="@+id/radar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_weight="1"
-                app:circleColor="@color/colorAccent"
+                app:circleColor="@color/colorAccent"-->
                 app:labelColor="@color/colorAccent" />
 
             <ImageView
                 android:id="@+id/left"
+
+                android:layout_marginLeft="120dp"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="10dp"
                 android:rotation="90"
                 android:src="@drawable/triangle" />
-
+<!--
             <Button
                 android:id="@+id/button_edit"
                 android:layout_width="wrap_content"
@@ -98,12 +103,15 @@ android:orientation="horizontal"
                 android:layout_alignParentBottom="true"
                 android:visibility="gone"
                 app:showButtonBar="true"
-                app:textColor="@color/colorAccent" />
+                app:textColor="@color/colorAccent" />-->
 
         </LinearLayout>
 
         <ImageView
+
             android:id="@+id/down"
+
+            android:layout_marginLeft="120dp"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerInParent="true"
