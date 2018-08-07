@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.webkit.WebView;
 
 import com.ultramegasoft.radarchart.RadarEditWidget;
 import com.ultramegasoft.radarchart.RadarHolder;
@@ -71,7 +72,8 @@ public class MainActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        WebView webView = (WebView) findViewById(R.id.video);
+        webView.loadUrl("http://192.168.254.18/html/cam_pic_new.php?time=1533660523032&pDelay=40000");
         // Find the views in the layout.
         mRadarView = findViewById(R.id.radar);
         mEditWidget = findViewById(R.id.edit_widget);

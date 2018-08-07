@@ -11,76 +11,102 @@
     android:background="@color/colorBackground"
     android:layout_height="match_parent">
 
-
-    <LinearLayout
-        android:layout_marginTop="50dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/border"
+    <WebView
+        android:id="@+id/video"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/up"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="120dp"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="10dp"
-            android:rotation="0"
-            android:background="@drawable/button_press" />
-
+        android:background="@color/colorPrimary" >
         <LinearLayout
-
+            android:layout_marginTop="10dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/border"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <Button
-                android:id="@+id/right"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_centerInParent="true"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/button_press"
-                android:rotation="270" />
-
-            <Button
-                android:id="@+id/left"
-
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_centerInParent="true"
-                android:layout_marginBottom="10dp"
+                android:id="@+id/up"
+                android:layout_marginTop="1dp"
                 android:layout_marginLeft="120dp"
-                android:background="@drawable/button_press"
-                android:rotation="90" />
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                style=""
+                android:rotation="0"
+                android:background="@drawable/button_press" />
 
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/right"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_press"
+                    android:rotation="270" />
+
+                <Button
+                    android:id="@+id/left"
+
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="120dp"
+                    android:background="@drawable/button_press"
+                    android:rotation="90" />
+
+
+                <com.ultramegasoft.radarchart.RadarEditWidget
+                    android:id="@+id/edit_widget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="gone"
+                    app:showButtonBar="true"
+                    app:textColor="@color/colorAccent" />
+                <com.ultramegasoft.radarchart.RadarView
+                    android:id="@+id/radar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    app:circleColor="@color/colorAccent"
+                    app:labelColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_marginTop="-100dp"
+                android:id="@+id/down"
+                android:layout_marginLeft="120dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:rotation="180"
+                android:background="@drawable/button_press" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </RelativeLayout>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/down"
-            android:layout_marginLeft="120dp"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="10dp"
-            android:rotation="180"
-            android:background="@drawable/button_press" />
-
-
-        <ImageView
-            android:layout_marginTop="-40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:background="@color/colorPrimary" />
-    </LinearLayout>
+    </WebView>
     <Button
         android:id="@+id/button_edit"
         android:layout_width="wrap_content"
@@ -90,22 +116,4 @@
         android:layout_margin="12dp"
         android:text="@string/button_edit"
         tools:ignore="RelativeOverlap" />
-
-    <com.ultramegasoft.radarchart.RadarEditWidget
-        android:id="@+id/edit_widget"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:visibility="gone"
-        app:showButtonBar="true"
-        app:textColor="@color/colorAccent" />
-    <com.ultramegasoft.radarchart.RadarView
-        android:id="@+id/radar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_weight="1"
-        app:circleColor="@color/colorAccent"
-        app:labelColor="@color/colorAccent" />
-
 </LinearLayout>
