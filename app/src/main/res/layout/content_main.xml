@@ -13,107 +13,161 @@
 
     <WebView
         android:id="@+id/video"
-        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary" >
         <LinearLayout
             android:layout_marginTop="10dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/border"
+            android:layout_marginLeft="-20dp"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/up"
-                android:layout_marginTop="1dp"
-                android:layout_marginLeft="120dp"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_centerInParent="true"
-                android:layout_marginBottom="10dp"
-                style=""
-                android:rotation="0"
-                android:background="@drawable/button_press" />
-
+            android:background="@drawable/border">
             <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:orientation="horizontal">
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/right"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_centerInParent="true"
+                    android:id="@+id/up"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/button_press"
-                    android:rotation="270" />
-
-                <Button
-                    android:id="@+id/left"
-
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_centerInParent="true"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="120dp"
-                    android:background="@drawable/button_press"
-                    android:rotation="90" />
-
-
-                <com.ultramegasoft.radarchart.RadarEditWidget
-                    android:id="@+id/edit_widget"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:visibility="gone"
-                    app:showButtonBar="true"
-                    app:textColor="@color/colorAccent" />
-                <com.ultramegasoft.radarchart.RadarView
-                    android:id="@+id/radar"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:rotation="0"
+                    android:background="@drawable/button_press" />
+                <!-- Horizontal Row-->
+                <LinearLayout
+                    android:layout_marginLeft="-50dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_weight="1"
-                    app:circleColor="@color/colorAccent"
-                    app:labelColor="@color/colorAccent" />
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
 
+                    <Button
+                        android:id="@+id/right"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_press"
+                        android:rotation="270" />
+                    <ImageView
+
+                       android:src="@drawable/camera"
+                        android:layout_margin="12.5dp"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp" />
+
+                    <Button
+                        android:id="@+id/left"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_press"
+                        android:rotation="90" />
+
+                </LinearLayout>
+                <!-- ENDHorizontal Row-->
+                <Button
+                    android:layout_marginTop="1dp"
+                    android:id="@+id/down"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="10dp"
+                    android:rotation="180"
+                    android:background="@drawable/button_press" />
             </LinearLayout>
 
-            <Button
-                android:layout_marginTop="-100dp"
-                android:id="@+id/down"
-                android:layout_marginLeft="120dp"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_centerInParent="true"
-                android:layout_marginBottom="10dp"
-                android:rotation="180"
-                android:background="@drawable/button_press" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <!--- RADAR -->
+            <com.ultramegasoft.radarchart.RadarView
+                android:id="@+id/radar"
+                android:layout_marginLeft="-60dp"
+                android:layout_width="300dp"
+                android:layout_height="275dp"
+                android:layout_marginTop="190dp"
+                android:layout_weight="1"
+                app:circleColor="@color/colorAccent"
+                app:labelColor="#fff" />
+            <!--- RADAR -->
 
 
-            </RelativeLayout>
+            <LinearLayout
+                android:layout_marginRight="-50dp"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/up2"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="10dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:rotation="0"
+                    android:background="@drawable/button_press" />
+                <!-- Horizontal Row-->
+                <LinearLayout
+                    android:layout_marginLeft="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/right2"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_press"
+                        android:rotation="270" />
+                    <ImageView
+
+                        android:src="@drawable/robot"
+                        android:layout_margin="12.5dp"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp" />
+
+                    <Button
+                        android:id="@+id/left2"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_press"
+                        android:rotation="90" />
+
+                </LinearLayout>
+                <!-- ENDHorizontal Row-->
+                <Button
+                    android:layout_marginTop="1dp"
+                    android:id="@+id/down2"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_marginLeft="100dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="10dp"
+                    android:rotation="180"
+                    android:background="@drawable/button_press" />
+            </LinearLayout>
         </LinearLayout>
 
     </WebView>
-    <Button
-        android:id="@+id/button_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="12dp"
-        android:text="@string/button_edit"
-        tools:ignore="RelativeOverlap" />
 </LinearLayout>

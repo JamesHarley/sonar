@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="287.000000dp"
+    android:height="287.000000dp"
+    android:viewportWidth="287.000000"
+    android:viewportHeight="287.000000">
+
+    <group
+            android:translateY="287.000000"
+            android:scaleX="0.100000"
+            android:scaleY="-0.100000">
+        <path
+            android:fillColor="@color/camera"
+            android:strokeWidth="1"
+            android:pathData="M1214 2715 c-539 -95 -972 -534 -1060 -1074 -18 -112 -18 -312 1 -426 78 -478 429 -882 894 -1029 235 -74 527 -76 766 -4 248 74 498 251 661 467 116 154 214 384 244 571 13 84 13 336 0 420 -70 440 -393 842 -805 1001 -164 64 -254 81 -445 85 -121 2 -200 -1 -256 -11z m441 -105 c240 -43 494 -183 660 -362 212 -229 319 -503 319 -818 0 -319 -109 -596 -325 -824 -277 -293 -693 -428 -1094 -356 -81 15 -237 66 -310 103 -232 114 -451 335 -555 559 -230 498 -102 1092 308 1431 183 151 404 250 622 277 89 10 290 5 375 -10z" />
+        <path
+            android:fillColor="@color/camera"
+            android:strokeWidth="1"
+            android:pathData="M1335 2583 c-209 -19 -416 -98 -585 -224 -78 -58 -234 -216 -252 -255 -9 -19 3 -46 87 -191 54 -92 131 -224 170 -293 40 -68 76 -125 81 -127 5 -1 37 48 72 110 34 62 105 186 158 277 53 91 122 210 153 265 32 55 101 175 154 268 53 92 97 169 97 172 0 5 -67 4 -135 -2z" />
+        <path
+            android:fillColor="@color/camera"
+            android:strokeWidth="1"
+            android:pathData="M1504 2538 c-59 -100 -324 -561 -324 -564 0 -2 286 -4 635 -4 436 0 635 3 635 10 0 17 -61 108 -127 190 -160 197 -411 347 -663 394 -122 23 -127 23 -156 -26z" />
+        <path
+            android:fillColor="@color/camera"
+            android:strokeWidth="1"
+            android:pathData="M398 1933 c-89 -188 -113 -295 -113 -503 0 -191 27 -323 96 -472 l12 -28 349 0 c191 0 348 2 348 4 0 5 -16 33 -352 615 -151 261 -279 476 -284 478 -6 2 -31 -41 -56 -94z" />
+        <path
+            android:fillColor="@color/camera"
+            android:strokeWidth="1"
+            android:pathData="M1780 1922 c0 -4 4 -12 9 -17 8 -8 436 -747 578 -997 24 -43 48 -78 52 -78 13 0 77 128 109 220 92 263 80 600 -30 838 l-20 42 -349 0 c-192 0 -349 -4 -349 -8z" />
+        <path
+            android:fillColor="@color/camera"
+            android:strokeWidth="1"
+            android:pathData="M2027 1363 c-3 -5 -141 -244 -307 -533 -166 -289 -307 -531 -313 -538 -5 -7 -7 -15 -3 -19 13 -13 253 17 341 42 222 63 438 203 573 370 31 39 60 73 65 76 4 3 -26 64 -68 135 -41 71 -119 206 -172 301 -54 95 -101 172 -105 173 -4 0 -9 -3 -11 -7z" />
+        <path
+            android:fillColor="@color/camera"
+            android:strokeWidth="1"
+            android:pathData="M420 877 c0 -27 119 -178 214 -272 187 -184 418 -298 649 -321 l62 -6 36 64 c19 35 97 170 172 301 75 130 137 238 137 240 0 1 -286 2 -635 2 -349 0 -635 -4 -635 -8z" />
+    </group>
+</vector>

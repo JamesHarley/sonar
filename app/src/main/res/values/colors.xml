@@ -6,4 +6,6 @@
     <color name="colorSelect">#ff00a6</color>
     <color name="colorBorder">#c8a000</color>
     <color name="colorBackground">#111E6C</color>
+    <color name="camera">@color/colorPrimary</color>
+    <color name="robot">@color/colorPrimary</color>
 </resources>
