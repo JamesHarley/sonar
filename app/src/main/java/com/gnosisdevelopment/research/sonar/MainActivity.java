@@ -1,6 +1,7 @@
 package com.gnosisdevelopment.research.sonar;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -49,7 +50,7 @@ public class MainActivity extends Activity {
         mRadarView.setData(mData);
 
 
-
+        webView.setBackgroundColor(Color.TRANSPARENT);
 
 
         // Load the animations.

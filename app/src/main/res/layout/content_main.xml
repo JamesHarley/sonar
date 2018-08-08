@@ -5,8 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
    android:orientation="horizontal"
-    android:layout_centerHorizontal="true"
-    android:layout_centerVertical="true"
     android:layout_width="match_parent"
     android:background="@color/colorBackground"
     android:layout_height="match_parent">
@@ -14,15 +12,15 @@
     <WebView
         android:id="@+id/video"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary" >
+        android:layout_height="match_parent">
         <LinearLayout
+
+            android:background="@drawable/border"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="-20dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/border">
+            android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="300dp"
                 android:layout_height="match_parent"
@@ -168,6 +166,6 @@
                     android:background="@drawable/button_press" />
             </LinearLayout>
         </LinearLayout>
-
     </WebView>
+
 </LinearLayout>
