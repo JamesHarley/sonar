@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
+import android.widget.Button;
 
 import com.ultramegasoft.radarchart.RadarEditWidget;
 import com.ultramegasoft.radarchart.RadarHolder;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
 
     private RadarView mRadarView;
-
+    private Animation mEditInAnimation;
 
 
     /**
@@ -48,7 +49,15 @@ public class MainActivity extends Activity {
 
         // Set the data for the RadarView to display.
         mRadarView.setData(mData);
-
+        final Button bb = findViewById(R.id.up);
+        mEditInAnimation = AnimationUtils.loadAnimation(this, R.anim.flavor_edit_out);
+        bb.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                //upaction
+                bb.startAnimation(mEditInAnimation);
+            }
+        });
 
         webView.setBackgroundColor(Color.TRANSPARENT);
 
